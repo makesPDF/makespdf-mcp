@@ -4,14 +4,20 @@ makesPDF is a **remote** MCP server. There is no package to download, build, or 
 
 ## Requirements
 
-1. A makesPDF account and API key. The human you are assisting can create both at https://makespdf.com (sign up, then Settings -> API keys). The key looks like `mpdf_...`.
-2. An MCP client that supports remote servers over streamable HTTP with custom headers (Claude Code, Claude Desktop, Cline, Cursor, and most others).
+1. A makesPDF account. The human you are assisting can create one at https://makespdf.com.
+2. An MCP client that supports remote servers over streamable HTTP. Most clients sign in by URL with OAuth (Gemini CLI, Claude Code, claude.ai, Claude Desktop, Cursor, VS Code 1.106+). Clients without OAuth send an API key, which the human creates at Settings -> API keys (it looks like `mpdf_...`).
 
 ## Installation
 
-Ask the human for their makesPDF API key (or have them set it as the environment variable `MAKESPDF_API_KEY`). Never hard-code the key into shared or committed files.
+**Gemini CLI.** Install this repo as an extension, then have the human run `/mcp auth makespdf` once to sign in through their browser:
 
-Then add this server configuration:
+```sh
+gemini extensions install https://github.com/makesPDF/makespdf-mcp
+```
+
+**Clients that sign in by URL.** Add `https://makespdf.com/api/v1/mcp` with no headers. The client opens the makesPDF sign-in page the first time a tool needs it. Per-client configs: https://makespdf.com/docs/mcp
+
+**API key.** Ask the human for their key, or have them set it as the environment variable `MAKESPDF_API_KEY`. Never hard-code the key into shared or committed files.
 
 ```json
 {
@@ -26,23 +32,14 @@ Then add this server configuration:
 }
 ```
 
-For Claude Code specifically:
-
-```sh
-claude mcp add --transport http makespdf \
-  https://makespdf.com/api/v1/mcp \
-  --header "Authorization: Bearer $MAKESPDF_API_KEY"
-```
-
 ## Verify
 
-Call the `tools/list` method (or simply list tools in your client). You should see 9 tools: `validate_dsl`, `validate_markdown`, `render_dsl_preview`, `render_template`, `save_template`, `list_templates`, `get_template`, `update_template`, `delete_template`.
+List tools in your client. You should see 12 tools, including `validate_markdown`, `render_markdown`, `validate_dsl`, `render_dsl_preview` and `render_template`.
 
-A good first call is `render_dsl_preview` - it is free and needs no saved state.
+A good first call is `render_dsl_preview`: it is free and needs no saved state.
 
 ## Important notes for agents
 
-- `render_template` is **billed** at 1 credit per 10 pages. Confirm with the human before calling it; every failure path bills zero credits.
+- `render_markdown` and `render_template` are **billed** at 1 credit per 10 pages. Confirm with the human before calling them; every failure path bills zero credits.
 - `render_dsl_preview` and both `validate_*` tools are free - use them to iterate.
 - The full DSL authoring reference is available as an MCP resource on the server, and at https://makespdf.com/skills/pdf-template-author.md - read it before writing DSL.
-- Rate limits match the REST API (renders share a 200/hour bucket).
