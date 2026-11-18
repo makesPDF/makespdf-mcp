@@ -4,7 +4,7 @@ The `makespdf` MCP server turns markdown or a compact template DSL into PDFs tha
 
 ## Signing in
 
-If a makesPDF tool fails because authentication is required, tell the user to run `/mcp auth makespdf`. It opens the makesPDF sign-in and consent page in their browser, and the sign-in is kept for later sessions. They don't need an API key.
+If a makesPDF tool fails because authentication is required, tell the user to sign in: in Gemini CLI, run `/mcp auth makespdf`; in Antigravity, open `/plugin`, expand makespdf under Installed and choose Sign in. Either opens the makesPDF sign-in and consent page in their browser, and the sign-in is kept for later sessions. They don't need an API key.
 
 ## Choosing a tool
 

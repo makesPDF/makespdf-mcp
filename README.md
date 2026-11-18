@@ -26,13 +26,23 @@ Most clients sign in by URL with your makesPDF account (OAuth), so there's no ke
 
 ### Gemini CLI
 
-This repo is a Gemini CLI extension:
+This repo is a Gemini CLI extension (users on a personal Google account have moved to Antigravity, below):
 
 ```sh
 gemini extensions install https://github.com/makesPDF/makespdf-mcp
 ```
 
 Then run `/mcp auth makespdf` once in a Gemini CLI session to sign in through your browser.
+
+### Antigravity
+
+This repo is also an Antigravity plugin:
+
+```sh
+agy plugin install https://github.com/makesPDF/makespdf-mcp
+```
+
+Antigravity opens the makesPDF sign-in in your browser when the server first connects. You can also sign in yourself: open `/plugin`, expand makespdf under Installed, and choose **Sign in**. In the Antigravity app, add the plugin from Customizations.
 
 ### Claude Code
 

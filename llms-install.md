@@ -5,7 +5,7 @@ makesPDF is a **remote** MCP server. There is no package to download, build, or 
 ## Requirements
 
 1. A makesPDF account. The human you are assisting can create one at https://makespdf.com.
-2. An MCP client that supports remote servers over streamable HTTP. Most clients sign in by URL with OAuth (Gemini CLI, Claude Code, claude.ai, Claude Desktop, Cursor, VS Code 1.106+). Clients without OAuth send an API key, which the human creates at Settings -> API keys (it looks like `mpdf_...`).
+2. An MCP client that supports remote servers over streamable HTTP. Most clients sign in by URL with OAuth (Gemini CLI, Antigravity, Claude Code, claude.ai, Claude Desktop, Cursor, VS Code 1.106+). Clients without OAuth send an API key, which the human creates at Settings -> API keys (it looks like `mpdf_...`).
 
 ## Installation
 
@@ -13,6 +13,12 @@ makesPDF is a **remote** MCP server. There is no package to download, build, or 
 
 ```sh
 gemini extensions install https://github.com/makesPDF/makespdf-mcp
+```
+
+**Antigravity.** Install this repo as a plugin. Antigravity opens the makesPDF sign-in in the browser when the server first connects:
+
+```sh
+agy plugin install https://github.com/makesPDF/makespdf-mcp
 ```
 
 **Clients that sign in by URL.** Add `https://makespdf.com/api/v1/mcp` with no headers. The client opens the makesPDF sign-in page the first time a tool needs it. Per-client configs: https://makespdf.com/docs/mcp

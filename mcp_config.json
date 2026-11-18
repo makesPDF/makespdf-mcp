@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "makespdf": {
+      "serverUrl": "https://makespdf.com/api/v1/mcp"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<svg width="24" height="24" viewBox="-1 -1 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Colours are the ink and accent tokens from docs/design/system.md,
+       with the dark-theme pair for dark browser chrome. -->
+  <style>
+    .ink { stroke: #0e151a; }
+    .accent { stroke: #0086b0; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #e7ecee; }
+      .accent { stroke: #3cbbe1; }
+    }
+  </style>
+  <!-- Document outline with folded corner -->
+  <path
+    class="ink"
+    d="M6 2h8l6 6v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <!-- Folded corner -->
+  <path
+    class="ink"
+    d="M14 2v6h6"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Down arrow -->
+  <path
+    class="accent"
+    d="M12 12v6m0 0l-2.5-2.5M12 18l2.5-2.5"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "makespdf",
+  "displayName": "makesPDF",
+  "version": "1.0.0",
+  "description": "Accessible, archival PDFs (PDF/UA-1 + PDF/A-2A) from markdown or a template DSL. Sign in with your makesPDF account; no API key needed.",
+  "logo": "assets/logo.svg",
+  "author": "makesPDF",
+  "suggestedPrompts": [
+    "Turn this markdown into an accessible PDF",
+    "Show me the makesPDF invoice templates",
+    "Draft a receipt template and preview it"
+  ]
+}
