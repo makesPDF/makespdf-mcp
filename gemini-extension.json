@@ -1,0 +1,16 @@
+{
+  "name": "makespdf",
+  "version": "1.0.0",
+  "description": "Accessible, archival PDFs (PDF/UA-1 + PDF/A-2A) from markdown or a template DSL. Sign in with your makesPDF account; no API key needed.",
+  "contextFileName": "rules/AGENTS.md",
+  "mcpServers": {
+    "makespdf": {
+      "type": "http",
+      "url": "https://makespdf.com/api/v1/mcp",
+      "oauth": {
+        "enabled": true,
+        "clientId": "https://makespdf.com/oauth/gemini-cli/client-metadata.json"
+      }
+    }
+  }
+}
