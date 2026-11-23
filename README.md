@@ -1,5 +1,7 @@
 # makesPDF MCP server
 
+[![MCP Badge](https://lobehub.com/badge/mcp/makespdf-makespdf-mcp)](https://lobehub.com/mcp/makespdf-makespdf-mcp)
+
 Generate compliant PDFs (PDF/A-2A + PDF/UA-1) from markdown or a compact DSL - about a second end to end, no headless browser.
 
 This repo documents the **hosted (remote) MCP server** at `https://makespdf.com/api/v1/mcp`. There is nothing to install or run locally - point your MCP client at the endpoint, sign in with your makesPDF account (or send an API key), and you get schema-validated tools for the full author -> render loop.
